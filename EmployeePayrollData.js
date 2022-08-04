@@ -1,10 +1,16 @@
+/*
+Ability to extend Employee Payroll Data to store gender and start date
+*/
 class EmployeePayrollData {
+    
     //Constructor
 
-    constructor(id, name, salary) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
+    constructor(...empData){
+        this.id = empData[0];
+        this.name = empData[1];
+        this.salary = empData[2];
+        this.gender = empData[3];
+        this.startDate = empData[4];
     }
 
     //Getter And Setter
@@ -16,9 +22,18 @@ class EmployeePayrollData {
     }
 
     //Method
-    toString() {
-        return "id: " + this.id + "\nname: " + this.name + "\nSalary: " + this.salary;
+    toString() {     
+        return "id: " + this.id + "\nname: " + this.name + "\nSalary: " + this.salary + "\nGender: " +this.gender+ "\nStartDate: " + this.startDate;
     }
 } 
-    let employeePayrollData = new EmployeePayrollData(11, "Santhosh", 30000);
+/*
+toLocaleDateString() returns the date (not the time) of a date, as a string, using locale conventions.
+*/
+const date = new Date();
+let currentDate = date.toLocaleDateString();
+
+let employeePayrollData = new EmployeePayrollData(1, "Santhosh", 30000);
 console.log(employeePayrollData.toString());
+
+let newEmployeePayrollData = new EmployeePayrollData(2 , "Kumar" , 40000 , "M" , currentDate);
+console.log(newEmployeePayrollData.toString());
