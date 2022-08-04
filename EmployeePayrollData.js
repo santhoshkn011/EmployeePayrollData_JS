@@ -1,5 +1,7 @@
 /*
-Ability to extend Employee Payroll Data to store gender and start date
+Ability to check the name
+starts with capital and has at
+least 3 characters - Use Regex Pattern - Use Try Catch in case of Error
 */
 class EmployeePayrollData {
     
@@ -18,7 +20,10 @@ class EmployeePayrollData {
         return this._name;
     }
     set name(name) {
-        this._name = name;
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (nameRegex.test(name))
+            this._name = name;
+        else throw 'Name is incorrect!!';
     }
 
     //Method
@@ -32,8 +37,17 @@ toLocaleDateString() returns the date (not the time) of a date, as a string, usi
 const date = new Date();
 let currentDate = date.toLocaleDateString();
 
-let employeePayrollData = new EmployeePayrollData(1, "Santhosh", 30000);
-console.log(employeePayrollData.toString());
+let employeePayrollData1 = new EmployeePayrollData(1, "Santhosh", 30000);
+console.log(employeePayrollData1.toString());
+console.log();
 
-let newEmployeePayrollData = new EmployeePayrollData(2 , "Kumar" , 40000 , "M" , currentDate);
-console.log(newEmployeePayrollData.toString());
+try {
+    let employeePayrollData2 = new EmployeePayrollData(2, "kumar", 35000);
+    console.log(employeePayrollData2.toString());  
+}catch (e) {
+    console.error(e);
+}
+
+console.log();
+let employeePayrollData3 = new EmployeePayrollData(3 , "Nayak" , 40000 , "M" , currentDate);
+console.log(employeePayrollData3.toString());
