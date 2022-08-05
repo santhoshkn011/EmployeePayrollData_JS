@@ -1,5 +1,5 @@
-/* UC2
-Restrict the PIN code from taking alphabets or special characters at the beginning.
+/* UC3
+Restrict the PIN code from taking alphabets or special characters at the End.
 */
 console.log("Welcome To PinCode Validation: ");
 const pincodeRegex = RegExp("^[1-9][0-9]{5}$");
@@ -12,7 +12,8 @@ function validatePincode(pincode){
 }
 
 try{
-    validatePincode("A400088");  
+    validatePincode("400088");
+    validatePincode("40088C"); 
 }
 catch(e){
     console.error(e);
