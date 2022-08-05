@@ -1,8 +1,8 @@
-/* UC3
-Restrict the PIN code from taking alphabets or special characters at the End.
+/* UC4
+Make sure 400 088 is also valid along with 400088
 */
 console.log("Welcome To PinCode Validation: ");
-const pincodeRegex = RegExp("^[1-9][0-9]{5}$");
+const pincodeRegex = RegExp("^[1-9][0-9]{2}\\s{0,1}[0-9]{3}$");
 
 function validatePincode(pincode){
     if(pincodeRegex.test(pincode))
@@ -13,7 +13,8 @@ function validatePincode(pincode){
 
 try{
     validatePincode("400088");
-    validatePincode("40088C"); 
+    validatePincode("400 088");
+    validatePincode("400");
 }
 catch(e){
     console.error(e);
