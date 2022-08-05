@@ -1,9 +1,9 @@
-/* UC2
-Ensure @ and validate the mandatory 2nd part i.e. bridgelabz
+/* UC3
+Ensure “.” after bridgelabz and validate the mandatory 3rd part i.e. co
 */
 console.log("Welcome To Email Validation.");
 
-const emailRegex = RegExp("^[a-zA-Z]*[@]{1}[.a-z]*$");
+const emailRegex = RegExp("^[a-zA-Z]*[@]{1}[a-z0-9]+[.]{1}[.a-z]*$");
 
 function validateEmail(email){
     if(emailRegex.test(email))
@@ -15,7 +15,7 @@ function validateEmail(email){
 try{
     validateEmail("santhosh@bridgelabz.co.in");
     validateEmail("abc@bridgelabz.co.in");
-    validateEmail("abcgmailcom.com");
+    validateEmail("abc@bridgelabz");
 }
 catch(e){
     console.error(e);
