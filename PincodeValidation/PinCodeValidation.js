@@ -1,5 +1,5 @@
-/* UC1
-The Postal Index Number (PIN) or PIN Code is a 6 digit code of Post Office numbering used by India Post.
+/* UC2
+Restrict the PIN code from taking alphabets or special characters at the beginning.
 */
 console.log("Welcome To PinCode Validation: ");
 const pincodeRegex = RegExp("^[1-9][0-9]{5}$");
@@ -12,15 +12,7 @@ function validatePincode(pincode){
 }
 
 try{
-    validatePincode("400088");
-    validatePincode("004456");   
-}
-catch(e){
-    console.error(e);
-}
-
-try{
-    validatePincode("400");  
+    validatePincode("A400088");  
 }
 catch(e){
     console.error(e);
